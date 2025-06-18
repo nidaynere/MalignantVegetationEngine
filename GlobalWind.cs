@@ -6,24 +6,36 @@ namespace MalignantVegetationEngine
     [DisallowMultipleComponent]
     internal sealed class GlobalWind : MonoBehaviour
     {
+        private int globalWindNormalInt;
         private int globalWindPowerInt;
-        private int globalWindSpeedInt;
+        private int globalNoiseScaleInt;
+        private int globalNoisePowerInt;
 
-        [SerializeField] private Vector3 windPower;
-        [SerializeField, Min (0)] private float windSpeed;
+        [Header("Noise Settings")]
+        [SerializeField] private Vector2 noiseScale;
+        [SerializeField] private float noisePower;
+
+        [Header ("Wind Settings")]
+        [SerializeField] private Vector3 windNormal;
+        [SerializeField, Min (0)] private float windPower;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        void OnEnable()
         {
-            globalWindPowerInt = Shader.PropertyToID("_GlobalWindPower");
-            globalWindSpeedInt = Shader.PropertyToID("_GlobalWindSpeed");
+            globalWindNormalInt = Shader.PropertyToID("_globalWindDirectionNormal");
+            globalWindPowerInt = Shader.PropertyToID("_globalWindDirectionPower");
+            globalNoiseScaleInt = Shader.PropertyToID("_globalWindNoiseTiling");
+            globalNoisePowerInt = Shader.PropertyToID("_globalWindNoisePower");
         }
 
         // Update is called once per frame
         void Update()
         {
-            Shader.SetGlobalVector(globalWindPowerInt, windPower);
-            Shader.SetGlobalFloat(globalWindSpeedInt, windSpeed);
+            Shader.SetGlobalVector (globalNoiseScaleInt, noiseScale);
+            Shader.SetGlobalFloat  (globalNoisePowerInt, noisePower);
+
+            Shader.SetGlobalVector (globalWindNormalInt, windNormal.normalized);
+            Shader.SetGlobalFloat  (globalWindPowerInt, windPower);
         }
     }
 }
