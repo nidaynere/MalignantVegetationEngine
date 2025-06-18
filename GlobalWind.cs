@@ -8,8 +8,12 @@ namespace MalignantVegetationEngine
     {
         private int globalWindNormalInt;
         private int globalWindPowerInt;
+
         private int globalNoiseScaleInt;
         private int globalNoisePowerInt;
+
+        private int globalColorFilterColorInt;
+        private int globalColorFilterIntensityInt;
 
         [Header("Noise Settings")]
         [SerializeField] private Vector2 noiseScale;
@@ -19,16 +23,22 @@ namespace MalignantVegetationEngine
         [SerializeField] private Vector3 windNormal;
         [SerializeField, Min (0)] private float windPower;
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        [Header("Color Filter")]
+        [SerializeField, Range (0f, 1f)] private float colorFilterIntensity;
+        [SerializeField, ColorUsage(false, true)] private Color colorFilter;
+
         void OnEnable()
         {
             globalWindNormalInt = Shader.PropertyToID("_globalWindDirectionNormal");
             globalWindPowerInt = Shader.PropertyToID("_globalWindDirectionPower");
+
             globalNoiseScaleInt = Shader.PropertyToID("_globalWindNoiseTiling");
             globalNoisePowerInt = Shader.PropertyToID("_globalWindNoisePower");
+
+            globalColorFilterColorInt = Shader.PropertyToID("_globalColorFilterColor");
+            globalColorFilterIntensityInt = Shader.PropertyToID("_globalColorFilterIntensity");
         }
 
-        // Update is called once per frame
         void Update()
         {
             Shader.SetGlobalVector (globalNoiseScaleInt, noiseScale);
@@ -36,6 +46,9 @@ namespace MalignantVegetationEngine
 
             Shader.SetGlobalVector (globalWindNormalInt, windNormal.normalized);
             Shader.SetGlobalFloat  (globalWindPowerInt, windPower);
+
+            Shader.SetGlobalColor(globalColorFilterColorInt, colorFilter);
+            Shader.SetGlobalFloat(globalColorFilterIntensityInt, colorFilterIntensity);
         }
     }
 }
