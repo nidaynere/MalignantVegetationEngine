@@ -1,17 +1,20 @@
 
 float4 _globalWindDirectionNormal;
 float _globalWindDirectionPower;
+float _globalWindDirectionStutter;
 float4 _globalWindNoiseTiling;
-float _globalWindNoisePower;
 
-void globalNoiseSampler_half(in float4 objectWorldPosition, out float2 uv)
+void noiseSampler_half(
+    in float4 objectWorldPosition, 
+    in float4 vertexPosition,
+    in float vertexBasedNoisePower,
+    out float2 uv)
 {
-    uv = _globalWindNoiseTiling.xy + float2(objectWorldPosition.x, objectWorldPosition.z);
-}
-
-void globalNoise_half(in float4 noise, out float globalNoise)
-{
-    globalNoise = noise * _globalWindNoisePower;
+    uv = _globalWindNoiseTiling.xy + float2(
+    objectWorldPosition.x + _TimeParameters.x * _globalWindDirectionStutter,
+    objectWorldPosition.z);
+    
+    uv.x += vertexPosition.x * vertexBasedNoisePower;
 }
 
 void f_half (
@@ -32,11 +35,10 @@ void f_half (
     float2 o2D = float2(objectWorldPosition.x, objectWorldPosition.z);
 
     float dist = distance(v2D, o2D);
-    
     float distPower = max(0, dist - startFromRadius);
     float heightPower = heightWindPower * max(0, vertexObjectPosition.y - startFromHeight);
-    float vertexWindPower = (1 + noise) * (sign(distPower) * heightPower);
-    
+    float vertexWindPower = noise * (sign(distPower) * heightPower);
+
     debugColor = lerp(float4(0, 0, 0, 0), float4(1, 1, 1, 1), vertexWindPower * 10);
     
     resultWorldPosition = vertexWorldPosition + vertexWindPower * _globalWindDirectionNormal * _globalWindDirectionPower;
