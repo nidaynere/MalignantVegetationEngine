@@ -579,7 +579,7 @@ Material:
     - _HasEmissive: 1
     - _HasGradient: 1
     - _HasOcclusion: 1
-    - _HeightWindPower: 1
+    - _HeightWindPower: 0.5
     - _HibrisTrans: 1
     - _ID: 1
     - _IndexofRefraction: -1.55
