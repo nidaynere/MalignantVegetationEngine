@@ -5,6 +5,15 @@ float _globalWindDirectionPower;
 float _globalWindDirectionStutter;
 float4 _globalWindNoiseTiling;
 
+struct InteractionBufferElement
+{
+    float3 Position;
+    float Radius;
+    float IsValid;
+};
+
+StructuredBuffer<InteractionBufferElement> _InteractionBuffer;
+
 void noiseTiling_half(out float2 tiling)
 {
     tiling = _globalWindNoiseTiling;
@@ -20,6 +29,29 @@ void noiseOffset_half(
     objectWorldPosition.x + _TimeParameters.x * _globalWindDirectionStutter,
     objectWorldPosition.z);
     offset.x += vertexPosition.x * vertexBasedNoisePower;
+}
+
+float2 calcInteraction(in float2 vertexPosition2D)
+{
+    float2 interactionFinal;
+    for (int i = 0; i < 512; i++)
+    {
+        InteractionBufferElement interaction = _InteractionBuffer[i];
+        
+        if (interaction.IsValid == 0)
+        {
+            break;
+        }
+        
+        float2 interactionPos2D = float2(interaction.Position.x, interaction.Position.z);
+        float2 interactionDirection = (vertexPosition2D - interactionPos2D);
+        float distance2D = length(interactionDirection);
+        
+        float interactionPower = pow(max(0, interaction.Radius - distance2D), 2);
+        interactionFinal += interactionPower * interactionDirection;
+    }
+    
+    return interactionFinal;
 }
 
 void f_half (
@@ -44,9 +76,15 @@ void f_half (
     float dist = distance(v2D, o2D);
     float distPower = max(0, dist - startFromRadius);
     float heightPower = heightWindPower * max(0, vertexObjectPosition.y - startFromHeight);
-    float vertexWindPower = noise * (sign(distPower) * heightPower);
+    float vertexBendPower = noise * (sign(distPower) * heightPower);
 
-    debugColor = lerp(float4(0, 0, 0, 0), float4(1, 1, 1, 1), vertexWindPower * 10);
+    debugColor = lerp(float4(0, 0, 0, 0), float4(1, 1, 1, 1), vertexBendPower * 10);
     
-    resultWorldPosition = vertexWorldPosition + vertexWindPower * windNormal * _globalWindDirectionPower;
+    resultWorldPosition = vertexWorldPosition + vertexBendPower * windNormal * _globalWindDirectionPower;
+    
+    float2 interaction2D = calcInteraction(v2D);
+    float4 interactionFinal = float4(interaction2D.x, 0, interaction2D.y, 0) * vertexBendPower;
+    
+    resultWorldPosition += interactionFinal;
 }
+

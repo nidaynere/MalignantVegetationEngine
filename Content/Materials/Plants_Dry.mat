@@ -12,13 +12,16 @@ Material:
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ALPHATEST_ON
+  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Transparent
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -272,6 +275,7 @@ Material:
     - _AlphaClipThreshold: 0.1
     - _AlphaCutoff: 0.5
     - _AlphaFadeOnOff: 1
+    - _AlphaToMask: 0
     - _Alphacutout: 1
     - _AlphalOD: 0.9
     - _AmbientLight: 1
@@ -289,6 +293,8 @@ Material:
     - _BendingAmount: 2
     - _BillboardKwToggle: 0
     - _BillboardShadowFade: 0.5
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 0
     - _Bneding: 1
     - _Bouncestrenght: 1
     - _BranchBending: 1
@@ -299,6 +305,7 @@ Material:
     - _CamOffset: 50
     - _CameraLength: 80
     - _CameraOffset: 50
+    - _CastShadows: 1
     - _CenterOfMass: 0.2
     - _CenterofMas: 1
     - _CenterofMass: 0.2
@@ -315,6 +322,7 @@ Material:
     - _ContinuousWindGB1: 0
     - _ContinuousWindGentle: 0
     - _Continuouswind: 0
+    - _Cull: 0
     - _CustomMeshNormal: 0
     - _CustomSpecular: 1
     - _Cutoff: 0.3
@@ -342,7 +350,7 @@ Material:
     - _Dither1: 1
     - _DryLeavesOffset: 0
     - _DryLeavesScale: 0
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _EASY: 0
     - _EMIT: 0
     - _EdgeFlutterMultiplier: 2.8
@@ -521,7 +529,7 @@ Material:
     - _Specularpower: 1
     - _SpeedTurbulence1: 1
     - _SquashAmount: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _StartFromHeight: 0
     - _StartFromRadius: 0
     - _StrongPulse: 1
@@ -530,6 +538,7 @@ Material:
     - _Stupidsway: 1
     - _SubsurfaceIndirect: 1
     - _SubsurfaceKwToggle: 1
+    - _Surface: 1
     - _SwayBig: 1
     - _TAOOffset: -1
     - _TAOScale: 3
@@ -651,6 +660,7 @@ Material:
     - _Windv2: 1
     - _Wooble: 0
     - _WoobleOn: 1
+    - _WorkflowMode: 1
     - _WorldFreq: 1
     - _WorldFrequency: 0.08
     - _WorldFrequency1: 1
@@ -661,12 +671,15 @@ Material:
     - _YATA: 0
     - _YE1: 5
     - _ZETAWIND: 1
+    - _ZTest: 4
     - _ZWrite: 1
+    - _ZWriteControl: 1
     - __dirty: 0
     - _blaha: 1
     - _blaha1: 1
     - _bomboca: 0
     - _fIXBCK: 1
+    - _filterRange: 1
     - _halfvectro: 0
     - _mASK: 1
     - _mASK1: 0
