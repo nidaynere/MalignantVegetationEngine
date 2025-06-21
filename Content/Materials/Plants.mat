@@ -12,16 +12,14 @@ Material:
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _ALPHATEST_ON
+  m_ValidKeywords: []
+  m_InvalidKeywords:
   - _SURFACE_TYPE_TRANSPARENT
-  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3002
-  stringTagMap:
-    RenderType: Transparent
+  stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -276,7 +274,7 @@ Material:
     - _AlbedoLightness: 1
     - _Albedomultiplier: 5
     - _AlphaClip: 1.3
-    - _AlphaClipThreshold: 0.1
+    - _AlphaClipThreshold: 0.4
     - _AlphaCutoff: 0.5
     - _AlphaFadeOnOff: 1
     - _AlphaToMask: 0
@@ -425,6 +423,7 @@ Material:
     - _ID: 1
     - _IndexofRefraction: 0
     - _Int0: 1
+    - _InteractionPower: 1
     - _Intesnity: 1
     - _KAKAMAKA: 0
     - _Keyword0: 0

@@ -61,11 +61,11 @@ void f_half (
     in float startFromRadius,
     in float startFromHeight,
     in float heightWindPower,
+    in float interactionPower,
 
     in float noise,
 
-    out float4 resultWorldPosition,
-    out float4 debugColor
+    out float4 resultWorldPosition
 )
 {
     float4 windNormal = lerp(_globalWindNormalStart, _globalWindNormalEnd, (noise - 0.5) * 2);
@@ -78,13 +78,15 @@ void f_half (
     float heightPower = heightWindPower * max(0, vertexObjectPosition.y - startFromHeight);
     float vertexBendPower = noise * (sign(distPower) * heightPower);
 
-    debugColor = lerp(float4(0, 0, 0, 0), float4(1, 1, 1, 1), vertexBendPower * 10);
-    
     resultWorldPosition = vertexWorldPosition + vertexBendPower * windNormal * _globalWindDirectionPower;
+
+    if (interactionPower > 0)
+    {
+        float2 interaction2D = calcInteraction(v2D);
+        float4 interactionFinal = float4(interaction2D.x, 0, interaction2D.y, 0) * vertexBendPower * interactionPower * 6;
+        interactionFinal.y -= length(interaction2D) * vertexBendPower * interactionPower * 8;
+        resultWorldPosition += interactionFinal;
+    }
     
-    float2 interaction2D = calcInteraction(v2D);
-    float4 interactionFinal = float4(interaction2D.x, 0, interaction2D.y, 0) * vertexBendPower;
-    
-    resultWorldPosition += interactionFinal;
 }
 

@@ -9,7 +9,7 @@ namespace MalignantVegetationEngine
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
-
+            state.RequireForUpdate<InteractionPoint>();
         }
 
         [BurstCompile]
@@ -34,12 +34,13 @@ namespace MalignantVegetationEngine
             public float delta;
 
             [BurstCompile]
-            public void Execute(DynamicBuffer<InteractionPoint> interactionPoints)
+            public readonly void Execute(DynamicBuffer<InteractionPoint> interactionPoints)
             {
                 for (int i = interactionPoints.Length - 1; i>=0; i--)
                 {
                     var element = interactionPoints[i];
                     element.runtime_Progress01 += delta * element.speed;
+                    interactionPoints[i] = element;
                 }
             }
         }

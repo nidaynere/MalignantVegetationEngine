@@ -3,13 +3,12 @@ using Unity.Entities;
 
 namespace MalignantVegetationEngine
 {
-    [UpdateAfter(typeof(InteractionBufferWriterSystem))]
     [BurstCompile]
     public partial struct InteractionDisposeSystem : ISystem
     {
         public void OnCreate(ref SystemState state)
         {
-
+            state.RequireForUpdate<InteractionPoint>();
         }
 
         public void OnUpdate(ref SystemState state)
