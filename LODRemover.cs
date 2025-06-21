@@ -3,12 +3,6 @@ using UnityEngine;
 
 public class LODRemover : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
     [MenuItem ("LODRemover/Remove")]
     // Update is called once per frame
     static void Run()
@@ -27,19 +21,11 @@ public class LODRemover : MonoBehaviour
             }
 
             var lods = lodGroup.GetLODs();
-            for (int i=1; i<lodGroup.lodCount; i++)
-            {
-                var lod = lods[i];
-                var renderers = lod.renderers;
-                foreach (var renderer in renderers)
-                {
-                    DestroyImmediate(renderer.gameObject, true);
-                }
-            }
-
             DestroyImmediate(lodGroup, true);
 
-            var rnd = lods[0].renderers[0];
+            var selected = lods[1];
+            var rnd = selected.renderers[0];
+            rnd.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
             UnityEditorInternal.ComponentUtility.CopyComponent(rnd);
             UnityEditorInternal.ComponentUtility.PasteComponentAsNew(prefabRoot);
 
@@ -47,8 +33,10 @@ public class LODRemover : MonoBehaviour
             UnityEditorInternal.ComponentUtility.CopyComponent(filter);
             UnityEditorInternal.ComponentUtility.PasteComponentAsNew(prefabRoot);
 
-            DestroyImmediate(rnd, true);
-            DestroyImmediate(filter, true);
+            for (int i= prefabRoot.transform.childCount-1; i>=0; i--)
+            {
+                DestroyImmediate(prefabRoot.transform.GetChild(i).gameObject, true);
+            }
 
             // Save the changes back to the Prefab asset
             PrefabUtility.SaveAsPrefabAsset(prefabRoot, path);
