@@ -793,7 +793,7 @@ Material:
     - _Specularpower: 0.25
     - _SquashAmount: 1
     - _SrcBlend: 1
-    - _StartFromHeight: 0
+    - _StartFromHeight: 0.1
     - _StartFromRadius: 0
     - _StrongPulse: 0
     - _StrongWind: 0
@@ -959,6 +959,7 @@ Material:
     - _bomboca: 0
     - _emissive_intensity_value: 0.65
     - _fIXBCK: 1
+    - _filterRange: 1
     - _halfvectro: 0
     - _mASK: 1
     - _mASK1: 1
