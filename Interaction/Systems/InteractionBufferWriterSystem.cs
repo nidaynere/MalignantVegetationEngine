@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -23,8 +22,6 @@ namespace MalignantVegetationEngine
 
         protected override void OnUpdate()
         {
-            Assert.IsNotNull(buffer);
-
             Entities
                 .ForEach(
                     (DynamicBuffer<InteractionPoint> interactionPoints) =>
