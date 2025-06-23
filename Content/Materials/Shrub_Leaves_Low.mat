@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shrub_Leaves
+  m_Name: Shrub_Leaves_Low
   m_Shader: {fileID: -6465566751694194690, guid: 36b61c235376b534a80f51011d4794fc,
     type: 3}
   m_Parent: {fileID: 0}
@@ -297,7 +297,7 @@ Material:
     - _Hardness2: 1
     - _Hardness3: 0
     - _HeightWindPower: 0.05
-    - _InteractionPower: 1
+    - _InteractionPower: 7
     - _InvertColorMask: 0
     - _InvertColorMask1: 0
     - _InvertColorMask2: 0
@@ -455,7 +455,7 @@ Material:
     - _ZWriteControl: 1
     - __dirty: 0
     - _filterRange: 1
-    - _interactionYDeduction: 0
+    - _interactionYDeduction: 0.2
     - _old: 0
     - _startFromRadius: 0
     - _trubvul: 0

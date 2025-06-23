@@ -392,7 +392,7 @@ Material:
     - _Specularpower: 0
     - _SpeedTurbulence1: 1
     - _SrcBlend: 5
-    - _StartFromHeight: 0
+    - _StartFromHeight: 0.2
     - _StartFromRadius: 0
     - _StrongWindSpeed: 1
     - _StrongWindSpeed1: 1
@@ -414,7 +414,7 @@ Material:
     - _VertexAo: 1
     - _VertexAo1: 1
     - _VertexB: 0
-    - _VertexBasedNoisePower: 0
+    - _VertexBasedNoisePower: 0.1
     - _VertexG: 0
     - _VertexGreenContrast: 1
     - _VertexLighting: 5

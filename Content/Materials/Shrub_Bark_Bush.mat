@@ -204,7 +204,7 @@ Material:
     - _Transculency: 0
     - _UVSec: 0
     - _VertexAo1: 1
-    - _VertexBasedNoisePower: 0
+    - _VertexBasedNoisePower: 0.1
     - _VertexPositionYOff: 0
     - _VisuliseBarkMask: 0
     - _VisuliseMask: 0
@@ -217,7 +217,7 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 1
     - __dirty: 0
-    - _filterRange: 1
+    - _filterRange: 0.1
     - _interactionYDeduction: 0
     - _startFromRadius: 0
     m_Colors:
