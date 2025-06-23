@@ -12,14 +12,16 @@ Material:
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords:
+  m_ValidKeywords:
+  - _ALPHATEST_ON
   - _SURFACE_TYPE_TRANSPARENT
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_InvalidKeywords: []
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3002
-  stringTagMap: {}
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    RenderType: Transparent
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -334,6 +336,7 @@ Material:
     - _DEBUGVisuliseWindMask: 0
     - _DIRECT: -1
     - _DIRECT2: 0
+    - _DefaultWindPower: 0
     - _DetailNormalMapScale: 1
     - _DielectricSpecularRange: 0
     - _DirWind: 0
@@ -485,7 +488,7 @@ Material:
     - _QuadScatterOnlyrecommendedonsimplecards: 1
     - _QuadScatterSWOnlybasiccards: 0
     - _QueueControl: 0
-    - _QueueOffset: 2
+    - _QueueOffset: 0
     - _RR: 0
     - _RR1: 1
     - _RTA: 0
@@ -688,6 +691,7 @@ Material:
     - _fIXBCK: 1
     - _filterRange: 1
     - _halfvectro: 0
+    - _interactionYDeduction: 0
     - _mASK: 1
     - _mASK1: 0
     - _ma: 0

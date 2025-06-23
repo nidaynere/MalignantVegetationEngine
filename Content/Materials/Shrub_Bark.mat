@@ -25,13 +25,15 @@ Material:
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ALPHATEST_ON
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2450
+  stringTagMap:
+    RenderType: TransparentCutout
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -128,18 +130,25 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClip: 1
     - _AlphaClipThreshold: 0
     - _AlphaCutoff: 0.5
+    - _AlphaToMask: 1
     - _AmbientOcclusion: 1
     - _Aointensity: 1
     - _BarkMaskView: 0
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 0
     - _BranchWindLarge: 2
     - _BranchWindSmall: 2
     - _BumpScale: 1
+    - _CastShadows: 1
     - _CenterofMass: 0
+    - _Cull: 0
     - _Cutoff: 0.5
     - _DEBUGVisualizeWindMask: 0
     - _DEBUGVisuliseWindMask: 0
+    - _DefaultWindPower: 0
     - _DetailNormalMapScale: 1
     - _DirectionalBendingAmount: 3
     - _DirectionalWind: 1
@@ -159,6 +168,7 @@ Material:
     - _Hardness1: 1
     - _Hardness3: 0
     - _HeightWindPower: 0.02
+    - _InteractionPower: 1
     - _MaskRoots: 1
     - _MaskView: 0
     - _Metallic: 0
@@ -187,6 +197,7 @@ Material:
     - _SrcBlend: 1
     - _StartFromHeight: 0.8
     - _StartFromRadius: 0
+    - _Surface: 0
     - _ToggleSwitch0: 0
     - _Tralal: 0
     - _Transculency: 1
@@ -200,9 +211,13 @@ Material:
     - _WWW: 0
     - _WindDirection: 1.0758609
     - _WindType: 1
+    - _WorkflowMode: 1
+    - _ZTest: 4
     - _ZWrite: 1
+    - _ZWriteControl: 1
     - __dirty: 0
     - _filterRange: 0.1
+    - _interactionYDeduction: 0
     - _startFromRadius: 0
     m_Colors:
     - _AlbedoColor: {r: 1, g: 1, b: 1, a: 1}

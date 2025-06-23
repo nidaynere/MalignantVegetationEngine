@@ -28,7 +28,7 @@ namespace MalignantVegetationEngine
                 Select(x => new DetailPrototype() 
                 { 
                      alignToGround = 1,
-                     density = 2,
+                     density = 3,
                      minHeight = 1,
                      maxHeight = 2,
                      minWidth = 1,

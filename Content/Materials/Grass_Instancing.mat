@@ -30,10 +30,10 @@ Material:
   - _ALPHATEST_ON
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
-  m_LightmapFlags: 7
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3001
+  m_CustomRenderQueue: -1
   stringTagMap:
     NatureRendererInstancing: true
     RenderType: Transparent
@@ -449,6 +449,7 @@ Material:
     - _DEBUGVisuliseWindMask: 0
     - _DIRECT: 1.98
     - _DIRECT2: 0.2
+    - _DefaultWindPower: 0
     - _DetailAlphaMode: 1
     - _DetailBlendMaxValue: 0.6
     - _DetailBlendMinValue: 0.4
@@ -594,6 +595,7 @@ Material:
     - _Int0: 1
     - _InteractionAmplitude: 1
     - _InteractionMaskValue: 0
+    - _InteractionPower: 1
     - _Intesnity: 1
     - _IsCollected: 0
     - _IsCoreShader: 1
@@ -710,7 +712,7 @@ Material:
     - _QuadScatterSWOnlybasiccards: 0
     - _Quadscatterpower: 1
     - _QueueControl: 0
-    - _QueueOffset: 1
+    - _QueueOffset: 0
     - _RR: 0
     - _RR1: 0
     - _RRRRRRRRRRRR: 0
@@ -974,6 +976,7 @@ Material:
     - _fIXBCK: 1
     - _filterRange: 1
     - _halfvectro: 0
+    - _interactionYDeduction: 0
     - _mASK: 1
     - _mASK1: 1
     - _ma: 0

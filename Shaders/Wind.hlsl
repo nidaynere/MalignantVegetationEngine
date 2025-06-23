@@ -31,9 +31,12 @@ void noiseOffset_half(
     offset.x += vertexPosition.x * vertexBasedNoisePower;
 }
 
-float2 calcInteraction(in float2 vertexPosition2D)
+float2 calcInteraction(in float2 vertexPosition2D, float objectY, float interactionYDeduction)
 {
     float2 interactionFinal;
+    
+    float deduction = pow(1 / (1 + interactionYDeduction), (1 + max(0, objectY)) * 2);
+    
     for (int i = 0; i < 512; i++)
     {
         InteractionBufferElement interaction = _InteractionBuffer[i];
@@ -48,7 +51,7 @@ float2 calcInteraction(in float2 vertexPosition2D)
         float distance2D = length(interactionDirection);
         
         float interactionPower = pow(max(0, interaction.Radius - distance2D), 2);
-        interactionFinal += interactionPower * interactionDirection;
+        interactionFinal += interactionPower * interactionDirection * deduction;
     }
     
     return interactionFinal;
@@ -61,7 +64,9 @@ void f_half (
     in float startFromRadius,
     in float startFromHeight,
     in float heightWindPower,
+    in float defaultWindPower,
     in float interactionPower,
+    in float interactionYDeduction,
 
     in float noise,
 
@@ -76,17 +81,16 @@ void f_half (
     float dist = distance(v2D, o2D);
     float distPower = max(0, dist - startFromRadius);
     float heightPower = heightWindPower * max(0, vertexObjectPosition.y - startFromHeight);
-    float vertexBendPower = noise * (sign(distPower) * heightPower);
+    float vertexBendPower = noise * (sign(distPower) * (heightPower + defaultWindPower));
 
     resultWorldPosition = vertexWorldPosition + vertexBendPower * windNormal * _globalWindDirectionPower;
 
     if (interactionPower > 0)
     {
-        float2 interaction2D = calcInteraction(v2D);
+        float2 interaction2D = calcInteraction(v2D, vertexObjectPosition.y, interactionYDeduction);
         float4 interactionFinal = float4(interaction2D.x, 0, interaction2D.y, 0) * vertexBendPower * interactionPower * 6;
         interactionFinal.y -= length(interaction2D) * vertexBendPower * interactionPower * 8;
         resultWorldPosition += interactionFinal;
     }
-    
 }
 

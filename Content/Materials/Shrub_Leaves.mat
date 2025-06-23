@@ -25,13 +25,16 @@ Material:
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ALPHATEST_ON
+  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Transparent
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -213,14 +216,18 @@ Material:
     - _AlphaClip: 1.4
     - _AlphaClipThreshold: 0.05
     - _AlphaCutoff: 0.5
+    - _AlphaToMask: 0
     - _Alphacutout: 1
     - _AmbientOcclusion: 1
     - _AmbientOcclusionIntensity: 1
     - _BackfaceNormalKill: 0
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 0
     - _BranchMaskR: 1
     - _BranchWindLarge: 2
     - _BranchWindSmall: 2
     - _BumpScale: 1
+    - _CastShadows: 1
     - _CenterofMass: 0
     - _CenterofMass1: 1
     - _CenterofMassintensity: 0
@@ -229,6 +236,7 @@ Material:
     - _ComputeVertexColors: 0
     - _ContinuousWindGentle: 0
     - _ContrastRandom: 0.4
+    - _Cull: 0
     - _Cutoff: 0.4
     - _DEBUGComputeVertexColors: 0
     - _DEBUGVertexA: 0
@@ -238,6 +246,7 @@ Material:
     - _DEBUGVertexRGBA: 0
     - _DEBUGVisuliseBarkMask: 0
     - _DEBUGVisuliseWindMask: 0
+    - _DefaultWindPower: 0
     - _DetailNormalMapScale: 1
     - _DirectionalBendingAmount: 3
     - _DirectionalWind: 1
@@ -246,7 +255,7 @@ Material:
     - _DirectionwindOnOff: 1
     - _DryLeavesOffset: -0.74
     - _DryLeavesScale: 1
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _EdgeLength: 15
     - _EnvironmentReflections: 1
     - _FKB_Offset: 1
@@ -288,6 +297,7 @@ Material:
     - _Hardness2: 1
     - _Hardness3: 0
     - _HeightWindPower: 0.05
+    - _InteractionPower: 1
     - _InvertColorMask: 0
     - _InvertColorMask1: 0
     - _InvertColorMask2: 0
@@ -394,11 +404,12 @@ Material:
     - _SpecularPowerX: 1
     - _Specularpower: 0
     - _SpeedTurbulence1: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _StartFromHeight: 0
     - _StartFromRadius: 0
     - _StrongWindSpeed: 1
     - _StrongWindSpeed1: 1
+    - _Surface: 1
     - _SwitchVGreenToRGBA: 0
     - _Tan: 1
     - _ToggleSwitch0: 1
@@ -435,11 +446,16 @@ Material:
     - _WindDirection1: 7.43
     - _WindType: 1
     - _Windpulse2d: 1
+    - _WorkflowMode: 1
     - _Y: 1
     - _YATA: 1
     - _Yattaa: 1
+    - _ZTest: 4
     - _ZWrite: 1
+    - _ZWriteControl: 1
     - __dirty: 0
+    - _filterRange: 1
+    - _interactionYDeduction: 0
     - _old: 0
     - _startFromRadius: 0
     - _trubvul: 0
