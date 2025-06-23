@@ -21,19 +21,17 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Grass_Instancing
-  m_Shader: {fileID: -6465566751694194690, guid: 36b61c235376b534a80f51011d4794fc,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 36b61c235376b534a80f51011d4794fc, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _ALPHAPREMULTIPLY_ON
   - _ALPHATEST_ON
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap:
     NatureRendererInstancing: true
     RenderType: Transparent
@@ -43,6 +41,7 @@ Material:
   - TransparentDepthPrepass
   - TransparentDepthPostpass
   - MOTIONVECTORS
+  - DepthOnly
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -355,7 +354,7 @@ Material:
     - _AlbedoBoost: 0
     - _AlbedoLightness: 1
     - _Albedomultiplier: 10.16
-    - _AlphaClip: 1.4
+    - _AlphaClip: 1
     - _AlphaClipThreshold: 0.1
     - _AlphaClipValue: 0.4
     - _AlphaCutoff: 0.4
@@ -377,7 +376,7 @@ Material:
     - _BendAmount: 0.084
     - _BendingAmount: 2
     - _Blend: 0
-    - _BlendModePreserveSpecular: 1
+    - _BlendModePreserveSpecular: 0
     - _Bneding: 1.6
     - _Bouncestrenght: 1
     - _BranchBending: 6.88
@@ -803,7 +802,7 @@ Material:
     - _SpecularPower: 0.3
     - _Specularpower: 0.25
     - _SquashAmount: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _StartFromHeight: 0.1
     - _StartFromRadius: 0
     - _StrongPulse: 0
@@ -848,7 +847,7 @@ Material:
     - _TransScattering: 16
     - _TransShadow: 1
     - _TransStrength: 16
-    - _Transculency: 2
+    - _Transculency: 1
     - _Translucency: 16
     - _TranslucencyFluffiness: 1
     - _TranslucencyIntensity: 3
@@ -966,8 +965,8 @@ Material:
     - _YE1: 4
     - _ZETAWIND: 0
     - _ZTest: 4
-    - _ZWrite: 1
-    - _ZWriteControl: 1
+    - _ZWrite: 0
+    - _ZWriteControl: 0
     - _Zon: 0
     - __dirty: 0
     - _blaha: 0

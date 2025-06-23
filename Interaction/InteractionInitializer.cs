@@ -10,7 +10,13 @@ namespace MalignantVegetationEngine
     {
         void Start()
         {
+            Shader.EnableKeyword("_CONDITION1");
             World.DefaultGameObjectInjectionWorld.EntityManager.CreateEntity(typeof(InteractionPoint));
+        }
+
+        private void OnDestroy()
+        {
+            Shader.DisableKeyword("_CONDITION1");
         }
     }
 }

@@ -22,7 +22,7 @@ namespace MalignantVegetationEngine
 
         private bool isPoolEnabled;
 
-        private void Start()
+        private void Awake()
         {
             entityQuery = World.
                 DefaultGameObjectInjectionWorld.

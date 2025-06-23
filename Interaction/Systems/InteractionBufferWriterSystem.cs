@@ -1,3 +1,4 @@
+using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -5,6 +6,21 @@ using UnityEngine;
 
 namespace MalignantVegetationEngine
 {
+    [BurstCompile]
+    internal struct BufferData
+    {
+        public float3 Position;
+        public float Radius;
+
+        [BurstCompile]
+        public static int Size()
+        {
+            return
+                sizeof(float) * 3 +
+                sizeof(float);
+        }
+    }
+
     internal partial class InteractionBufferWriterSystem : SystemBase
     {
         private ComputeBuffer buffer;
@@ -41,7 +57,6 @@ namespace MalignantVegetationEngine
 
                             data[i] = new BufferData()
                             {
-                                IsValid = 1,
                                 Radius = radius,
                                 Position = element.interactionPosition,
                             };
@@ -55,21 +70,6 @@ namespace MalignantVegetationEngine
                     }
                 ).WithoutBurst().Run();
 
-        }
-
-        private struct BufferData
-        {
-            public float3 Position;
-            public float Radius;
-            public float IsValid;
-
-            public static int Size()
-            {
-                return
-                    sizeof(float) * 3 +
-                    sizeof(float) +
-                    sizeof(float);
-            }
         }
     }
 }

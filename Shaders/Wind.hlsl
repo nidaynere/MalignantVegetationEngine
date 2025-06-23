@@ -1,4 +1,6 @@
 
+#pragma multi_compile _ _CONDITION1
+
 float4 _globalWindNormalStart;
 float4 _globalWindNormalEnd;
 float _globalWindDirectionPower;
@@ -9,7 +11,6 @@ struct InteractionBufferElement
 {
     float3 Position;
     float Radius;
-    float IsValid;
 };
 
 StructuredBuffer<InteractionBufferElement> _InteractionBuffer;
@@ -33,24 +34,25 @@ void noiseOffset_half(
 
 float2 calcInteraction(in float2 vertexPosition2D, float objectY, float interactionYDeduction)
 {
-    float2 interactionFinal;
+    float2 interactionFinal = float2(0, 0);
     
     float deduction = pow(1 / (1 + interactionYDeduction), (1 + max(0, objectY)) * 2);
     
     for (int i = 0; i < 512; i++)
     {
         InteractionBufferElement interaction = _InteractionBuffer[i];
-        
-        if (interaction.IsValid == 0)
-        {
-            break;
-        }
-        
+
         float2 interactionPos2D = float2(interaction.Position.x, interaction.Position.z);
         float2 interactionDirection = (vertexPosition2D - interactionPos2D);
         float distance2D = length(interactionDirection);
+    
+        float radialPower = max(0, interaction.Radius - distance2D);
+        if (radialPower <= 0)
+        {
+            continue;
+        }
         
-        float interactionPower = pow(max(0, interaction.Radius - distance2D), 2);
+        float interactionPower = pow(radialPower, 2);
         interactionFinal += interactionPower * interactionDirection * deduction;
     }
     
@@ -84,13 +86,15 @@ void f_half (
     float vertexBendPower = noise * (sign(distPower) * (heightPower + defaultWindPower));
 
     resultWorldPosition = vertexWorldPosition + vertexBendPower * windNormal * _globalWindDirectionPower;
-
+    
+#ifdef _CONDITION1
     if (interactionPower > 0)
     {
         float2 interaction2D = calcInteraction(v2D, vertexObjectPosition.y, interactionYDeduction);
         float4 interactionFinal = float4(interaction2D.x, 0, interaction2D.y, 0) * vertexBendPower * interactionPower * 6;
-        interactionFinal.y -= length(interaction2D) * vertexBendPower * interactionPower * 8;
+        interactionFinal.y -= length(interaction2D) * vertexBendPower * interactionPower * 12;
         resultWorldPosition += interactionFinal;
     }
+#endif
 }
 

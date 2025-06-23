@@ -36,9 +36,7 @@ namespace MalignantVegetationEngine
             globalWindNormalEndInt = Shader.PropertyToID("_globalWindNormalEnd");
             globalWindPowerInt = Shader.PropertyToID("_globalWindDirectionPower");
             globalWindStutterInt = Shader.PropertyToID("_globalWindDirectionStutter");
-
             globalNoiseScaleInt = Shader.PropertyToID("_globalWindNoiseTiling");
-
             globalColorFilterColorInt = Shader.PropertyToID("_globalColorFilterColor");
             globalColorFilterIntensityInt = Shader.PropertyToID("_globalColorFilterIntensity");
         }
