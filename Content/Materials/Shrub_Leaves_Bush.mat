@@ -8,20 +8,18 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Shrub_Leaves_Bush
-  m_Shader: {fileID: -6465566751694194690, guid: 36b61c235376b534a80f51011d4794fc,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 36b61c235376b534a80f51011d4794fc, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ALPHATEST_ON
-  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2450
   stringTagMap:
-    RenderType: Transparent
+    RenderType: TransparentCutout
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -37,8 +35,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ColorMapRGB:
-        m_Texture: {fileID: 4929792473868046222, guid: a7082a3ea9f63fa41a26d8e017c9477b,
-          type: 2}
+        m_Texture: {fileID: 4929792473868046222, guid: a7082a3ea9f63fa41a26d8e017c9477b, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -203,7 +200,7 @@ Material:
     - _AlphaClip: 1.4
     - _AlphaClipThreshold: 0.2
     - _AlphaCutoff: 0.5
-    - _AlphaToMask: 0
+    - _AlphaToMask: 1
     - _Alphacutout: 1
     - _AmbientOcclusion: 1
     - _AmbientOcclusionIntensity: 1
@@ -223,7 +220,7 @@ Material:
     - _ComputeVertexColors: 0
     - _ContinuousWindGentle: 0
     - _ContrastRandom: 0.4
-    - _Cull: 0
+    - _Cull: 2
     - _Cutoff: 0.4
     - _DEBUGComputeVertexColors: 0
     - _DEBUGVertexA: 0
@@ -242,7 +239,7 @@ Material:
     - _DirectionwindOnOff: 1
     - _DryLeavesOffset: -0.74
     - _DryLeavesScale: 1
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EdgeLength: 15
     - _EnvironmentReflections: 1
     - _FKB_Offset: 1
@@ -284,7 +281,7 @@ Material:
     - _Hardness2: 1
     - _Hardness3: 0
     - _HeightWindPower: 0.2
-    - _InteractionPower: 1
+    - _InteractionPower: 0.7
     - _InvertColorMask: 0
     - _InvertColorMask1: 0
     - _InvertColorMask2: 0
@@ -391,12 +388,12 @@ Material:
     - _SpecularPowerX: 1
     - _Specularpower: 0
     - _SpeedTurbulence1: 1
-    - _SrcBlend: 5
+    - _SrcBlend: 1
     - _StartFromHeight: 0.2
     - _StartFromRadius: 0
     - _StrongWindSpeed: 1
     - _StrongWindSpeed1: 1
-    - _Surface: 1
+    - _Surface: 0
     - _SwitchVGreenToRGBA: 0
     - _Tan: 1
     - _ToggleSwitch0: 1
@@ -442,7 +439,7 @@ Material:
     - _ZWriteControl: 1
     - __dirty: 0
     - _filterRange: 1
-    - _interactionYDeduction: 0
+    - _interactionYDeduction: 0.05
     - _old: 0
     - _startFromRadius: 0
     - _trubvul: 0

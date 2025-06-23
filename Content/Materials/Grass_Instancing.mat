@@ -25,7 +25,6 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _ALPHATEST_ON
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 0
@@ -354,7 +353,7 @@ Material:
     - _AlbedoBoost: 0
     - _AlbedoLightness: 1
     - _Albedomultiplier: 10.16
-    - _AlphaClip: 1
+    - _AlphaClip: 0
     - _AlphaClipThreshold: 0.1
     - _AlphaClipValue: 0.4
     - _AlphaCutoff: 0.4

@@ -21,8 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Shrub_Leaves_Low
-  m_Shader: {fileID: -6465566751694194690, guid: 36b61c235376b534a80f51011d4794fc,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 36b61c235376b534a80f51011d4794fc, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -50,8 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ColorMapRGB:
-        m_Texture: {fileID: 4929792473868046222, guid: a7082a3ea9f63fa41a26d8e017c9477b,
-          type: 2}
+        m_Texture: {fileID: 4929792473868046222, guid: a7082a3ea9f63fa41a26d8e017c9477b, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -455,7 +453,7 @@ Material:
     - _ZWriteControl: 1
     - __dirty: 0
     - _filterRange: 1
-    - _interactionYDeduction: 0.2
+    - _interactionYDeduction: 0.5
     - _old: 0
     - _startFromRadius: 0
     - _trubvul: 0

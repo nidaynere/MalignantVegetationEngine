@@ -91,8 +91,8 @@ void f_half (
     if (interactionPower > 0)
     {
         float2 interaction2D = calcInteraction(v2D, vertexObjectPosition.y, interactionYDeduction);
-        float4 interactionFinal = float4(interaction2D.x, 0, interaction2D.y, 0) * vertexBendPower * interactionPower * 6;
-        interactionFinal.y -= length(interaction2D) * vertexBendPower * interactionPower * 12;
+        float4 interactionFinal = float4(interaction2D.x, 0, interaction2D.y, 0) * vertexBendPower * interactionPower * 8;
+        interactionFinal.y -= length(interaction2D) * vertexBendPower * interactionPower * 6;
         resultWorldPosition += interactionFinal;
     }
 #endif
