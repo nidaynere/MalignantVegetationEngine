@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1814511768602069829}
   - component: {fileID: 1817954758272066273}
   - component: {fileID: 6253812419709088162}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PineBarkDeadGCATA_A_LOD0
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

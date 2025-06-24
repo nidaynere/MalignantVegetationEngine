@@ -8,22 +8,21 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Plants_Dry
-  m_Shader: {fileID: -6465566751694194690, guid: 36b61c235376b534a80f51011d4794fc,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 36b61c235376b534a80f51011d4794fc, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ALPHATEST_ON
-  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2450
   stringTagMap:
-    RenderType: Transparent
+    RenderType: TransparentCutout
   disabledShaderPasses:
   - MOTIONVECTORS
+  - SHADOWCASTER
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -271,11 +270,11 @@ Material:
     - _Addswitch: 0
     - _AlbedoLightness: 1
     - _Albedomultiplier: 5
-    - _AlphaClip: 1.4
-    - _AlphaClipThreshold: 0.1
+    - _AlphaClip: 1
+    - _AlphaClipThreshold: 0.2
     - _AlphaCutoff: 0.5
     - _AlphaFadeOnOff: 1
-    - _AlphaToMask: 0
+    - _AlphaToMask: 1
     - _Alphacutout: 1
     - _AlphalOD: 0.9
     - _AmbientLight: 1
@@ -305,7 +304,7 @@ Material:
     - _CamOffset: 50
     - _CameraLength: 80
     - _CameraOffset: 50
-    - _CastShadows: 1
+    - _CastShadows: 0
     - _CenterOfMass: 0.2
     - _CenterofMas: 1
     - _CenterofMass: 0.2
@@ -322,7 +321,7 @@ Material:
     - _ContinuousWindGB1: 0
     - _ContinuousWindGentle: 0
     - _Continuouswind: 0
-    - _Cull: 0
+    - _Cull: 2
     - _CustomMeshNormal: 0
     - _CustomSpecular: 1
     - _Cutoff: 0.3
@@ -351,7 +350,7 @@ Material:
     - _Dither1: 1
     - _DryLeavesOffset: 0
     - _DryLeavesScale: 0
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EASY: 0
     - _EMIT: 0
     - _EdgeFlutterMultiplier: 2.8
@@ -531,7 +530,7 @@ Material:
     - _Specularpower: 1
     - _SpeedTurbulence1: 1
     - _SquashAmount: 1
-    - _SrcBlend: 5
+    - _SrcBlend: 1
     - _StartFromHeight: 0
     - _StartFromRadius: 0
     - _StrongPulse: 1
@@ -540,7 +539,7 @@ Material:
     - _Stupidsway: 1
     - _SubsurfaceIndirect: 1
     - _SubsurfaceKwToggle: 1
-    - _Surface: 1
+    - _Surface: 0
     - _SwayBig: 1
     - _TAOOffset: -1
     - _TAOScale: 3
@@ -602,7 +601,7 @@ Material:
     - _VertexAoIntensity: 0
     - _VertexAoOnOff: 0
     - _VertexAointensity: 0
-    - _VertexBasedNoisePower: 0.05
+    - _VertexBasedNoisePower: 0
     - _VertexColorSupportG: 1
     - _VertexLighting: 0
     - _VertexNormalWarpAmount: 0
@@ -675,7 +674,7 @@ Material:
     - _ZETAWIND: 1
     - _ZTest: 4
     - _ZWrite: 1
-    - _ZWriteControl: 1
+    - _ZWriteControl: 0
     - __dirty: 0
     - _blaha: 1
     - _blaha1: 1

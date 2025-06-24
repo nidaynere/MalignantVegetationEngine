@@ -25,22 +25,21 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _SURFACE_TYPE_TRANSPARENT
+  - _ALPHATEST_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 2450
   stringTagMap:
     NatureRendererInstancing: true
-    RenderType: Transparent
+    RenderType: TransparentCutout
   disabledShaderPasses:
   - TransparentBackface
   - TransparentBackfaceDebugDisplay
   - TransparentDepthPrepass
   - TransparentDepthPostpass
   - MOTIONVECTORS
-  - DepthOnly
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -353,12 +352,12 @@ Material:
     - _AlbedoBoost: 0
     - _AlbedoLightness: 1
     - _Albedomultiplier: 10.16
-    - _AlphaClip: 0
-    - _AlphaClipThreshold: 0.1
+    - _AlphaClip: 1
+    - _AlphaClipThreshold: 0.2
     - _AlphaClipValue: 0.4
     - _AlphaCutoff: 0.4
     - _AlphaFadeOnOff: 1
-    - _AlphaToMask: 0
+    - _AlphaToMask: 1
     - _AlphaVariationValue: 0.5
     - _Alphacutout: 1
     - _AlphalOD: 0.9
@@ -488,7 +487,7 @@ Material:
     - _DryLeavesOffset1: -0.36
     - _DryLeavesScale: 1.4
     - _DryLeavesScale1: 3.16
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EASY: 1
     - _EMIT: 10.28
     - _EdgeFlutter: 1
@@ -801,7 +800,7 @@ Material:
     - _SpecularPower: 0.3
     - _Specularpower: 0.25
     - _SquashAmount: 1
-    - _SrcBlend: 5
+    - _SrcBlend: 1
     - _StartFromHeight: 0.1
     - _StartFromRadius: 0
     - _StrongPulse: 0
@@ -817,7 +816,7 @@ Material:
     - _SubsurfaceScatteringValue: 16
     - _SubsurfaceShadowValue: 1
     - _SubsurfaceValue: 1
-    - _Surface: 1
+    - _Surface: 0
     - _SwayBig: 1
     - _SwitchVGreenToRGBA: 0
     - _TAOOffset: 0
@@ -846,7 +845,7 @@ Material:
     - _TransScattering: 16
     - _TransShadow: 1
     - _TransStrength: 16
-    - _Transculency: 1
+    - _Transculency: 0
     - _Translucency: 16
     - _TranslucencyFluffiness: 1
     - _TranslucencyIntensity: 3
@@ -964,7 +963,7 @@ Material:
     - _YE1: 4
     - _ZETAWIND: 0
     - _ZTest: 4
-    - _ZWrite: 0
+    - _ZWrite: 1
     - _ZWriteControl: 0
     - _Zon: 0
     - __dirty: 0

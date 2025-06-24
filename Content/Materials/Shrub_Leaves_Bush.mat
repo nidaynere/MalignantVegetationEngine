@@ -197,7 +197,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Albedoligth: 0
-    - _AlphaClip: 1.4
+    - _AlphaClip: 1
     - _AlphaClipThreshold: 0.2
     - _AlphaCutoff: 0.5
     - _AlphaToMask: 1
@@ -281,7 +281,7 @@ Material:
     - _Hardness2: 1
     - _Hardness3: 0
     - _HeightWindPower: 0.2
-    - _InteractionPower: 0.7
+    - _InteractionPower: 1
     - _InvertColorMask: 0
     - _InvertColorMask1: 0
     - _InvertColorMask2: 0
@@ -397,7 +397,7 @@ Material:
     - _SwitchVGreenToRGBA: 0
     - _Tan: 1
     - _ToggleSwitch0: 1
-    - _Transculency: 2
+    - _Transculency: 1
     - _TranslucencyFluffiness: 0
     - _TranslucencyPower: 2
     - _TranslucencyRange: 1
@@ -436,10 +436,10 @@ Material:
     - _Yattaa: 1
     - _ZTest: 4
     - _ZWrite: 1
-    - _ZWriteControl: 1
+    - _ZWriteControl: 0
     - __dirty: 0
     - _filterRange: 1
-    - _interactionYDeduction: 0.05
+    - _interactionYDeduction: 0
     - _old: 0
     - _startFromRadius: 0
     - _trubvul: 0

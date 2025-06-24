@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Plants
-  m_Shader: {fileID: -6465566751694194690, guid: 36b61c235376b534a80f51011d4794fc,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 36b61c235376b534a80f51011d4794fc, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -19,11 +18,12 @@ Material:
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap:
     RenderType: Transparent
   disabledShaderPasses:
   - MOTIONVECTORS
+  - DepthOnly
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -275,8 +275,8 @@ Material:
     - _Addswitch: 0
     - _AlbedoLightness: 1
     - _Albedomultiplier: 5
-    - _AlphaClip: 1.3
-    - _AlphaClipThreshold: 0.4
+    - _AlphaClip: 1
+    - _AlphaClipThreshold: 0.1
     - _AlphaCutoff: 0.5
     - _AlphaFadeOnOff: 1
     - _AlphaToMask: 0
@@ -326,7 +326,7 @@ Material:
     - _ContinuousWindGB1: 0
     - _ContinuousWindGentle: 0
     - _Continuouswind: 0
-    - _Cull: 0
+    - _Cull: 2
     - _CustomMeshNormal: 0
     - _CustomSpecular: 1
     - _Cutoff: 0.3
@@ -421,7 +421,7 @@ Material:
     - _Hardness: 1
     - _Hardness1: 1
     - _Hardness2: 1
-    - _HeightWindPower: 0.3
+    - _HeightWindPower: 0.5
     - _HueVariationKwToggle: 0
     - _ID: 1
     - _IndexofRefraction: 0
@@ -609,7 +609,7 @@ Material:
     - _VertexAoIntensity: 0
     - _VertexAoOnOff: 0
     - _VertexAointensity: 0
-    - _VertexBasedNoisePower: 0.02
+    - _VertexBasedNoisePower: 0
     - _VertexColorSupportG: 1
     - _VertexLighting: 0
     - _VertexNormalWarpAmount: 0
@@ -681,8 +681,8 @@ Material:
     - _YE1: 5
     - _ZETAWIND: 1
     - _ZTest: 4
-    - _ZWrite: 1
-    - _ZWriteControl: 1
+    - _ZWrite: 0
+    - _ZWriteControl: 0
     - _Zon: 0
     - __dirty: 0
     - _blaha: 1
