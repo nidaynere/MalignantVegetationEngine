@@ -11,6 +11,7 @@ struct InteractionBufferElement
 {
     float3 Position;
     float Radius;
+    float Power;
 };
 
 StructuredBuffer<InteractionBufferElement> _InteractionBuffer;
@@ -53,7 +54,7 @@ float2 calcInteraction(in float2 vertexPosition2D, float objectY, float interact
         }
         
         float interactionPower = pow(radialPower, 2);
-        interactionFinal += interactionPower * interactionDirection * deduction;
+        interactionFinal += interactionPower * interactionDirection * deduction * interaction.Power;
     }
     
     return interactionFinal;
@@ -80,7 +81,7 @@ void f_half (
     float2 v2D = float2(vertexWorldPosition.x, vertexWorldPosition.z);
     float2 o2D = float2(objectWorldPosition.x, objectWorldPosition.z);
 
-    float dist = distance(v2D, o2D);
+    float dist = sqrt(distance(v2D, o2D));
     float distPower = max(0, dist - startFromRadius);
     float heightPower = heightWindPower * max(0, vertexObjectPosition.y - startFromHeight);
     float vertexBendPower = noise * (sign(distPower) * (heightPower + defaultWindPower));
@@ -91,8 +92,8 @@ void f_half (
     if (interactionPower > 0)
     {
         float2 interaction2D = calcInteraction(v2D, vertexObjectPosition.y, interactionYDeduction);
-        float4 interactionFinal = float4(interaction2D.x, 0, interaction2D.y, 0) * vertexBendPower * interactionPower * 8;
-        interactionFinal.y -= length(interaction2D) * vertexBendPower * interactionPower * 6;
+        float4 interactionFinal = float4(interaction2D.x, 0, interaction2D.y, 0) * vertexBendPower * interactionPower / 2;
+        interactionFinal.y -= length(interaction2D) * vertexBendPower * heightPower * interactionPower / 2;
         resultWorldPosition += interactionFinal;
     }
 #endif

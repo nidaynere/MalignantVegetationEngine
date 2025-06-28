@@ -276,7 +276,7 @@ Material:
     - _AlbedoLightness: 1
     - _Albedomultiplier: 5
     - _AlphaClip: 1
-    - _AlphaClipThreshold: 0.1
+    - _AlphaClipThreshold: 0.2
     - _AlphaCutoff: 0.5
     - _AlphaFadeOnOff: 1
     - _AlphaToMask: 0
@@ -326,7 +326,7 @@ Material:
     - _ContinuousWindGB1: 0
     - _ContinuousWindGentle: 0
     - _Continuouswind: 0
-    - _Cull: 2
+    - _Cull: 0
     - _CustomMeshNormal: 0
     - _CustomSpecular: 1
     - _Cutoff: 0.3
@@ -421,7 +421,7 @@ Material:
     - _Hardness: 1
     - _Hardness1: 1
     - _Hardness2: 1
-    - _HeightWindPower: 0.5
+    - _HeightWindPower: 0.3
     - _HueVariationKwToggle: 0
     - _ID: 1
     - _IndexofRefraction: 0
@@ -609,7 +609,7 @@ Material:
     - _VertexAoIntensity: 0
     - _VertexAoOnOff: 0
     - _VertexAointensity: 0
-    - _VertexBasedNoisePower: 0
+    - _VertexBasedNoisePower: 0.01
     - _VertexColorSupportG: 1
     - _VertexLighting: 0
     - _VertexNormalWarpAmount: 0

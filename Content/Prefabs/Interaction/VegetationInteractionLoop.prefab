@@ -67,5 +67,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   radius: 2
+  power: 1
   loop: 1
   renewAfterMovement: 0.2

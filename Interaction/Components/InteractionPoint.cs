@@ -8,6 +8,7 @@ namespace MalignantVegetationEngine
     internal partial struct InteractionPoint : IBufferElementData
     {
         public float3 interactionPosition;
+        public float interactionPower;
         public float maxRadius;
         public float speed;
         public float runtime_Progress01;

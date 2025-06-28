@@ -11,12 +11,14 @@ namespace MalignantVegetationEngine
     {
         public float3 Position;
         public float Radius;
+        public float Power;
 
         [BurstCompile]
         public static int Size()
         {
             return
                 sizeof(float) * 3 +
+                sizeof(float) +
                 sizeof(float);
         }
     }
@@ -53,12 +55,13 @@ namespace MalignantVegetationEngine
                             }
 
                             var element = interactionPoints[i];
-                            var radius = math.sin(math.sqrt(element.runtime_Progress01) * 3.14f);
+                            var radius = element.maxRadius * math.sin(math.sqrt(element.runtime_Progress01) * 3.14f);
 
                             data[i] = new BufferData()
                             {
                                 Radius = radius,
                                 Position = element.interactionPosition,
+                                Power = element.interactionPower
                             };
                         }
 

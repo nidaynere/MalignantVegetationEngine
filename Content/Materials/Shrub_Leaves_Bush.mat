@@ -439,7 +439,7 @@ Material:
     - _ZWriteControl: 0
     - __dirty: 0
     - _filterRange: 1
-    - _interactionYDeduction: 0
+    - _interactionYDeduction: 0.1
     - _old: 0
     - _startFromRadius: 0
     - _trubvul: 0

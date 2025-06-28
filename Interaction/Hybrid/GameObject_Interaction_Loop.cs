@@ -4,23 +4,21 @@ using UnityEngine;
 
 namespace MalignantVegetationEngine
 {
-    [AddComponentMenu ("MalignantVegetationEngine/" + nameof (VegetationInteractionGameObject))]
+    [AddComponentMenu("MalignantVegetationEngine/" + nameof(GameObject_Interaction_Loop))]
     [DisallowMultipleComponent]
-    internal sealed class VegetationInteractionGameObject : MonoBehaviour, IPoolEnabled, IPoolDisabled
+    internal sealed class GameObject_Interaction_Loop : MonoBehaviour, IPoolEnabled, IPoolDisabled
     {
         [Header("Interaction settings")]
         [SerializeField] private float speed = 1;
         [SerializeField] private float radius = 2;
+        [SerializeField, Min(0)] private float power = 1;
 
-        [Header ("Continous")]
-        [SerializeField] private bool loop = false;
-        [SerializeField] private float renewAfterMovement = 0.2f;
+        [Header("Loop")]
+        [SerializeField] private float frequency = 0.5f;
 
-        private Vector3 lastPosition;
         private EntityQuery entityQuery;
-        private float movementSq;
-
         private bool isPoolEnabled;
+        private float nextInteraction;
 
         private void Awake()
         {
@@ -28,14 +26,10 @@ namespace MalignantVegetationEngine
                 DefaultGameObjectInjectionWorld.
                 EntityManager.
                 CreateEntityQuery(typeof(InteractionPoint));
-
-            movementSq = renewAfterMovement * renewAfterMovement;
         }
 
         public void OnPostEnabled()
         {
-            CreateInteraction();
-            lastPosition = transform.position;
             isPoolEnabled = true;
         }
 
@@ -56,18 +50,16 @@ namespace MalignantVegetationEngine
                 return;
             }
 
-            if (!loop)
+            var time = Time.time;
+
+            if (nextInteraction > time)
             {
                 return;
             }
 
-            var currentPosition = transform.position;
-            var distSq = Vector3.SqrMagnitude (lastPosition - currentPosition);
-            if (distSq > movementSq)
-            {
-                lastPosition = currentPosition;
-                CreateInteraction();
-            }
+            nextInteraction = time + frequency;
+
+            CreateInteraction();
         }
 
         private void CreateInteraction()
@@ -77,8 +69,11 @@ namespace MalignantVegetationEngine
                 return;
             }
 
+            entityQuery.CompleteDependency();
+
             buffer.Add(new InteractionPoint()
             {
+                interactionPower = power,
                 interactionPosition = transform.position,
                 maxRadius = radius,
                 speed = speed
