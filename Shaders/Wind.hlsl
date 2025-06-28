@@ -91,9 +91,10 @@ void f_half (
 #ifdef _CONDITION1
     if (interactionPower > 0)
     {
+        float noiseMod = (1 + noise) / 2;
         float2 interaction2D = calcInteraction(v2D, vertexObjectPosition.y, interactionYDeduction);
-        float4 interactionFinal = float4(interaction2D.x, 0, interaction2D.y, 0) * vertexBendPower * interactionPower / 2;
-        interactionFinal.y -= length(interaction2D) * vertexBendPower * heightPower * interactionPower / 2;
+        float4 interactionFinal = noiseMod * float4(interaction2D.x, 0, interaction2D.y, 0) * vertexBendPower * interactionPower / 2;
+        interactionFinal.y -= noiseMod * length(interaction2D) * vertexBendPower * heightPower * interactionPower / 2;
         resultWorldPosition += interactionFinal;
     }
 #endif
