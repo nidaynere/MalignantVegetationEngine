@@ -5,6 +5,7 @@ void colorFilter_half(
     in float4 objectPosition, 
     in float startFromRadius,
     in float filterRange,
+    in float noise,
     in float4 color, 
     out float4 colorWithFilter)
 {
@@ -16,7 +17,7 @@ void colorFilter_half(
     colorWithFilter = lerp
     (
             color,
-            _globalColorFilterColor, 
-            min(1, filterRange * intensitySign * height * _globalColorFilterIntensity)
+            _globalColorFilterColor,
+            min(1, pow(noise, 2) * filterRange * intensitySign * height * _globalColorFilterIntensity)
     );
 }

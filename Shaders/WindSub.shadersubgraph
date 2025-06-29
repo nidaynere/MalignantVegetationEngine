@@ -474,21 +474,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "127b3141af32486f97e8ee722c52b5e9",
-    "m_Id": 2,
-    "m_DisplayName": "DebugColor",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "DebugColor",
-    "m_StageCapability": 3,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
     "m_ObjectId": "142fb8e679d448bb9dea637f8161d2fb",
     "m_Id": 0,
@@ -2269,9 +2254,6 @@
     "m_Slots": [
         {
             "m_Id": "7e168cf8bad3488dae59bfe091ca06fe"
-        },
-        {
-            "m_Id": "127b3141af32486f97e8ee722c52b5e9"
         }
     ],
     "synonyms": [],

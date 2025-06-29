@@ -17,14 +17,12 @@ namespace MalignantVegetationEngine
         private int globalColorFilterColorInt;
         private int globalColorFilterIntensityInt;
 
-        [Header("Noise Settings")]
-        [SerializeField] private Vector2 noiseScale = new Vector2(0.003f, 0.003f);
-
         [Header ("Wind Settings")]
         [SerializeField] private Vector3 windNormalStart = new Vector3 (0,0, -1);
         [SerializeField] private Vector3 windNormalEnd = new Vector3(0, 0, -2);
         [SerializeField, Min(0)] private float windPower = 2;
         [SerializeField, Min(0)] private float windFlutter = 0.05f;
+        [SerializeField] private Vector2 noiseScale = new Vector2(0.003f, 0.003f);
 
         [Header("Color Filter")]
         [SerializeField, Range (0f, 1f)] private float colorFilterIntensity = 0f;
