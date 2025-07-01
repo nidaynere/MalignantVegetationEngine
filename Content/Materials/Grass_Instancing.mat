@@ -845,7 +845,7 @@ Material:
     - _TransScattering: 16
     - _TransShadow: 1
     - _TransStrength: 16
-    - _Transculency: 0
+    - _Transculency: 1
     - _Translucency: 16
     - _TranslucencyFluffiness: 1
     - _TranslucencyIntensity: 3
@@ -982,6 +982,7 @@ Material:
     - _mo: 1
     - _nEW: 1
     - _nORMALbackfix: 0
+    - _noiseTiling: 128
     - _pOWE: 0
     - _quad: 1
     - _rOTATE: 1
