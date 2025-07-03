@@ -57,6 +57,8 @@ float2 calcInteraction(in float2 vertexPosition2D, float objectY, float interact
         interactionFinal += interactionPower * interactionDirection * deduction * interaction.Power;
     }
     
+    interactionFinal = min(interactionFinal, float2(1, 1));
+    
     return interactionFinal;
 }
 
