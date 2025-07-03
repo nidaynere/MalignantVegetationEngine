@@ -56,9 +56,7 @@ float2 calcInteraction(in float2 vertexPosition2D, float objectY, float interact
         float interactionPower = pow(radialPower, 2);
         interactionFinal += interactionPower * interactionDirection * deduction * interaction.Power;
     }
-    
-    interactionFinal = min(interactionFinal, float2(1, 1));
-    
+
     return interactionFinal;
 }
 
@@ -97,6 +95,12 @@ void f_half (
         float2 interaction2D = calcInteraction(v2D, vertexObjectPosition.y, interactionYDeduction);
         float4 interactionFinal = noiseMod * float4(interaction2D.x, 0, interaction2D.y, 0) * vertexBendPower * interactionPower / 2;
         interactionFinal.y -= noiseMod * length(interaction2D) * vertexBendPower * heightPower * interactionPower;
+       
+        const float wall = 0.4;
+        interactionFinal.x = sign (interactionFinal.x) * min (abs (interactionFinal.x), wall);
+        interactionFinal.y = sign (interactionFinal.y) * min (abs (interactionFinal.y), wall);
+        interactionFinal.z = sign (interactionFinal.z) * min (abs (interactionFinal.z), wall);
+    
         resultWorldPosition += interactionFinal;
     }
 #endif
