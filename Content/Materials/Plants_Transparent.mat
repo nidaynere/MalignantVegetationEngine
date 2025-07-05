@@ -699,6 +699,7 @@ Material:
     - _mo: 1
     - _nEW: 1
     - _nORMALbackfix: 0
+    - _noiseTiling: 128
     - _pOWE: 0
     - _quad: 1
     - _rOTATE: 1
