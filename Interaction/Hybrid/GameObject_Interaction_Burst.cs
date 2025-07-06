@@ -35,7 +35,7 @@ namespace MalignantVegetationEngine
 
         public void OnPreDisabled()
         {
-
+            StopAllCoroutines();
         }
 
         public void OnPreEnabled()
